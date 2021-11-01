@@ -1,0 +1,87 @@
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  color: white;
+}
+
+body {
+  background-image: url("./assets/background.jpg");
+  background-size: cover;
+}
+
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+main {
+  display: grid;
+  justify-items: center;
+  grid-gap: 3rem;
+}
+
+h1 {
+  font-family: "Corben", cursive;
+  font-size: 7rem;
+}
+
+h4 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.qr-contact-details {
+  width: 200px;
+  border-radius: 5px;
+}
+
+.button {
+  color: white;
+  font-size: 1.2rem;
+  border: 1px solid #ddf45b;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+}
+
+.button:hover {
+  background-color: #c6f91f;
+  color: #141115;
+}
+
+.social {
+  height: 3rem;
+  margin: 1rem;
+}
+
+@media (max-width: 568px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .button {
+    font-size: 1rem;
+  }
+
+  .qr-contact-details {
+    width: 150px;
+  }
+
+  .social {
+    height: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  h4 {
+    font-size: 1rem;
+  }
+}
