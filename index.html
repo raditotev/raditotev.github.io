@@ -55,6 +55,7 @@
         <h1>Radi Totev</h1>
         <h4>Software Developer (Engineer in Test)</h4>
         <a
+          id="download_button"
           class="button"
           href="https://drive.google.com/file/d/1BDRv9aPefrta9SYTe5nSZQEKkMUgXOfw/view?usp=sharing"
           type="button"
@@ -82,7 +83,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-CTB3VYCZHC"
+      src="https://www.googletagmanager.com/gtag/js?id=UA-28783766-3"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -91,7 +92,16 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "G-CTB3VYCZHC");
+      gtag("config", "UA-28783766-3");
+
+      const button = document.getElementById("download_button");
+
+      button.onclick = () => {
+        gtag("event", "download_cv", {
+          event_category: "click",
+          event_label: "Download CV",
+        });
+      };
     </script>
   </body>
 </html>
