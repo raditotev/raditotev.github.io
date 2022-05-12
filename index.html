@@ -97,31 +97,31 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
+      gtag('js', new Date());
 
-      gtag("config", "UA-28783766-3");
+      gtag('config', 'UA-28783766-3');
 
-      const button = document.getElementById("download_button");
+      const button = document.getElementById('download_button');
       button.onclick = () => {
-        gtag("event", "download_cv", {
-          event_category: "click",
-          event_label: "Download CV",
+        gtag('event', 'download_cv', {
+          event_category: 'click',
+          event_label: 'Download CV',
         });
       };
 
-      const githubLink = document.getElementById("github");
+      const githubLink = document.getElementById('github');
       githubLink.onclick = () => {
-        gtag("event", "visit_github", {
-          event_category: "click",
-          event_label: "Github Link Clicked",
+        gtag('event', 'visit_github', {
+          event_category: 'click',
+          event_label: 'Github Link Clicked',
         });
       };
 
-      const linkedInLink = document.getElementById("linkedin");
+      const linkedInLink = document.getElementById('linkedin');
       linkedInLink.onclick = () => {
-        gtag("event", "visit_linkedin", {
-          event_category: "click",
-          event_label: "LinkedIn Link Clicked",
+        gtag('event', 'visit_linkedin', {
+          event_category: 'click',
+          event_label: 'LinkedIn Link Clicked',
         });
       };
     </script>
