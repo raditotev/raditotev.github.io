@@ -124,6 +124,14 @@
           event_label: 'LinkedIn Link Clicked',
         });
       };
+
+      const blogLink = document.getElementById('blog');
+      blogLink.onclick = () => {
+        gtag('event', 'visit_blog', {
+          event_category: 'click',
+          event_label: 'Blog Link Clicked',
+        });
+      };
     </script>
   </body>
 </html>
