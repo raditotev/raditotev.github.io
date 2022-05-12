@@ -62,6 +62,11 @@ a {
   margin: 1rem;
 }
 
+#blog img {
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
 @media (max-width: 568px) {
   h1 {
     font-size: 3.5rem;
