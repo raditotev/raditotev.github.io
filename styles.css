@@ -67,6 +67,10 @@ a {
   border-radius: 5px;
 }
 
+footer span a {
+  color: #ccc;
+}
+
 @media (max-width: 568px) {
   h1 {
     font-size: 3.5rem;

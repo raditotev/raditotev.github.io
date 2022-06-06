@@ -77,6 +77,13 @@
           >Download CV</a
         >
         <section>
+          <a
+            id="email"
+            href="mailto:raditotev@gmail.com?bcc=me@radi.pro"
+            target="_blank"
+          >
+            <img class="social" src="./assets/email.png" alt="Email icon" />
+          </a>
           <a id="github" href="https://github.com/raditotev" target="_blank">
             <img
               class="social"
@@ -100,6 +107,13 @@
           </a>
         </section>
       </main>
+      <footer>
+        <span
+          ><a href="https://www.flaticon.com/free-icons/" title="icons"
+            >Icons by Freepik - Flaticon</a
+          ></span
+        >
+      </footer>
     </div>
     <script>
       const button = document.getElementById('download_button');
@@ -131,6 +145,14 @@
         gtag('event', 'visit_blog', {
           event_category: 'click',
           event_label: 'Blog Link Clicked',
+        });
+      };
+
+      const emailLink = document.getElementById('email');
+      emailLink.onclick = () => {
+        gtag('event', 'send_email', {
+          event_category: 'click',
+          event_label: 'Send E-mail Clicked',
         });
       };
     </script>
