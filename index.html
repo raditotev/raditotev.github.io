@@ -1,160 +1,415 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./assets/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-VKSNF8B0V8"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+    <!-- SEO Meta Tags -->
+    <title>Practical IT Solutions for Growing Businesses | Freelance IT Professional</title>
+    <meta name="description" content="I help small and medium-sized companies build, secure, and maintain reliable IT systems—without unnecessary complexity. Self-hosted solutions with full data ownership.">
+    <meta name="author" content="Your Name">
 
-      gtag('config', 'G-VKSNF8B0V8');
-    </script>
-    <title>Radi's Personal Page</title>
-    <meta
-      name="description"
-      content="Radi's personal page, containing contact info and CV download link"
-    />
-    <meta name="author" content="Radi Totev" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Corben&family=Roboto:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <div class="overlay">
-      <main>
-        <img
-          class="qr-contact-details"
-          src="./assets/qr-code.png"
-          alt="QR Code"
-        />
-        <h1>Radi Totev</h1>
-        <h4>Software Developer</h4>
-        <a
-          id="download_button"
-          class="button"
-          href="https://drive.google.com/file/d/1BDRv9aPefrta9SYTe5nSZQEKkMUgXOfw/view?usp=sharing"
-          type="button"
-          target="_blank"
-          >Download CV</a
-        >
-        <section>
-          <a
-            id="email"
-            href="mailto:raditotev@gmail.com?bcc=me@radi.pro"
-            target="_blank"
-          >
-            <img class="social" src="./assets/email.png" alt="Email icon" />
-          </a>
-          <a id="github" href="https://github.com/raditotev" target="_blank">
-            <img
-              class="social"
-              src="./assets/github-logo.png"
-              alt="Github logo"
-            />
-          </a>
-          <a
-            id="linkedin"
-            href="https://www.linkedin.com/in/raditotev/"
-            target="_blank"
-          >
-            <img
-              class="social"
-              src="./assets/linkedin-logo.png"
-              alt="LinkedIn logo"
-            />
-          </a>
-          <a id="blog" href="https://blog.radi.pro/" target="_blank">
-            <img class="social" src="./assets/blog-logo.png" alt="Blog logo" />
-          </a>
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Practical IT Solutions for Growing Businesses">
+    <meta property="og:description" content="I help small and medium-sized companies build, secure, and maintain reliable IT systems—without unnecessary complexity.">
+    <meta property="og:image" content="assets/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
+    <!-- Google Fonts - Inter for headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <a href="#" class="nav-logo" aria-label="Home">
+                <span class="nav-logo-icon">
+                    <!-- Shield/Server Icon -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </span>
+                <span>IT Solutions</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+    <main id="main">
+
+        <!-- ============================================
+             HERO SECTION
+             ============================================ -->
+        <section class="hero section" aria-labelledby="hero-headline">
+            <!-- Background decorative elements -->
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-bg-gradient hero-bg-gradient--1"></div>
+                <div class="hero-bg-gradient hero-bg-gradient--2"></div>
+            </div>
+
+            <div class="container">
+                <div class="hero-content">
+                    <!-- Headline -->
+                    <h1 id="hero-headline" class="hero-headline fade-in">
+                        Practical IT Solutions for <span class="gradient-text">Growing Businesses</span>
+                    </h1>
+
+                    <!-- Subheadline -->
+                    <p class="hero-subheadline fade-in fade-in-delay-1">
+                        I help small and medium-sized companies build, secure, and maintain reliable IT systems—without unnecessary complexity.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="hero-cta fade-in fade-in-delay-2">
+                        <a href="#contact" class="btn btn-primary">
+                            Get in Touch
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#services" class="btn btn-secondary">
+                            View Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <a href="#services" class="hero-scroll-indicator" aria-label="Scroll to services">
+                <span>Scroll</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+            </a>
         </section>
-      </main>
-      <footer>
-        <span
-          ><a href="https://www.flaticon.com/free-icons/" title="icons"
-            >Icons by Freepik - Flaticon</a
-          ></span
-        >
-      </footer>
-    </div>
-    <script>
-      const button = document.getElementById('download_button');
-      button.onclick = () => {
-        gtag('event', 'download_cv', {
-          event_category: 'click',
-          event_label: 'Download CV',
-        });
-      };
 
-      const githubLink = document.getElementById('github');
-      githubLink.onclick = () => {
-        gtag('event', 'visit_github', {
-          event_category: 'click',
-          event_label: 'Github Link Clicked',
-        });
-      };
+        <!-- ============================================
+             SERVICES SECTION
+             ============================================ -->
+        <section id="services" class="services section" aria-labelledby="services-heading">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="services-header">
+                    <span class="section-label">What I Offer</span>
+                    <h2 id="services-heading">How I Can Help</h2>
+                    <p>Reliable, self-hosted solutions that give you complete control over your data and infrastructure.</p>
+                </div>
 
-      const linkedInLink = document.getElementById('linkedin');
-      linkedInLink.onclick = () => {
-        gtag('event', 'visit_linkedin', {
-          event_category: 'click',
-          event_label: 'LinkedIn Link Clicked',
-        });
-      };
+                <!-- Services Grid -->
+                <div class="services-grid">
 
-      const blogLink = document.getElementById('blog');
-      blogLink.onclick = () => {
-        gtag('event', 'visit_blog', {
-          event_category: 'click',
-          event_label: 'Blog Link Clicked',
-        });
-      };
+                    <!-- Service 1: Private Cloud Storage -->
+                    <article class="service-card fade-in fade-in-delay-1">
+                        <div class="service-card-icon">
+                            <!-- Cloud Icon -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Private Cloud Storage & File Sync</h3>
+                        <p class="service-card-description">
+                            Securely store, sync, and share files across devices and teams. Includes built-in calendars, contacts, tasks, and collaborative document editing — a full replacement for commercial cloud drives with no subscription fees or data sharing.
+                        </p>
+                    </article>
 
-      const emailLink = document.getElementById('email');
-      emailLink.onclick = () => {
-        gtag('event', 'send_email', {
-          event_category: 'click',
-          event_label: 'Send E-mail Clicked',
-        });
-      };
-    </script>
-  </body>
+                    <!-- Service 2: Team Collaboration -->
+                    <article class="service-card fade-in fade-in-delay-2">
+                        <div class="service-card-icon">
+                            <!-- Users Icon -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Team Collaboration & Knowledge Workspace</h3>
+                        <p class="service-card-description">
+                            All-in-one platform for notes, wikis, project boards, databases, whiteboards, and mind maps. Perfect for team brainstorming, documentation, task tracking, and replacing scattered productivity tools.
+                        </p>
+                    </article>
+
+                    <!-- Service 3: Password Management -->
+                    <article class="service-card fade-in fade-in-delay-3">
+                        <div class="service-card-icon">
+                            <!-- Key Icon -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Secure Password Management</h3>
+                        <p class="service-card-description">
+                            Centralized, encrypted password vault for individuals and teams. Features shared credentials, 2FA storage, secure sharing, and emergency access — enterprise-grade security without third-party risks or recurring costs.
+                        </p>
+                    </article>
+
+                    <!-- Service 4: Remote Access -->
+                    <article class="service-card fade-in fade-in-delay-4">
+                        <div class="service-card-icon">
+                            <!-- Network Icon -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="6" height="6" rx="1"/>
+                                <rect x="17" y="1" width="6" height="6" rx="1"/>
+                                <rect x="9" y="17" width="6" height="6" rx="1"/>
+                                <path d="M4 7v3a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V7"/>
+                                <path d="M12 14v3"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Remote Access & Secure Networking</h3>
+                        <p class="service-card-description">
+                            Zero-configuration private network that connects remote workers, devices, and offices effortlessly. Enables secure access to internal resources from anywhere without complex VPN setups or port forwarding.
+                        </p>
+                    </article>
+
+                    <!-- Service 5: Team Messaging -->
+                    <article class="service-card fade-in fade-in-delay-5">
+                        <div class="service-card-icon">
+                            <!-- Message Icon -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Team Messaging & Communication</h3>
+                        <p class="service-card-description">
+                            Real-time chat with channels, direct messages, file sharing, and integrations. Full control over conversations and data — a privacy-focused alternative to mainstream team chat platforms.
+                        </p>
+                    </article>
+
+                    <!-- Service 6: Private Code Hosting -->
+                    <article class="service-card fade-in fade-in-delay-6">
+                        <div class="service-card-icon">
+                            <!-- Git Branch Icon -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="6" y1="3" x2="6" y2="15"/>
+                                <circle cx="18" cy="6" r="3"/>
+                                <circle cx="6" cy="18" r="3"/>
+                                <path d="M18 9a9 9 0 0 1-9 9"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Private Code Hosting & Development</h3>
+                        <p class="service-card-description">
+                            Self-hosted Git repositories with issue tracking, pull requests, wikis, and basic CI/CD. Ideal for internal projects, client work, or dev teams needing private repos without SaaS limitations.
+                        </p>
+                    </article>
+
+                    <!-- Service 7: Low-Code Tools -->
+                    <article class="service-card fade-in fade-in-delay-7">
+                        <div class="service-card-icon">
+                            <!-- Layout Icon -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="3" y1="9" x2="21" y2="9"/>
+                                <line x1="9" y1="21" x2="9" y2="9"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Low-Code Internal Tools & Dashboards</h3>
+                        <p class="service-card-description">
+                            Build custom admin panels, forms, CRUD apps, and business dashboards connected to your data sources. Rapidly automate workflows, reporting, and internal processes without heavy coding.
+                        </p>
+                    </article>
+
+                    <!-- Service 8: Finance Tracking -->
+                    <article class="service-card fade-in fade-in-delay-8">
+                        <div class="service-card-icon">
+                            <!-- Chart Icon -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="12" y1="20" x2="12" y2="10"/>
+                                <line x1="18" y1="20" x2="18" y2="4"/>
+                                <line x1="6" y1="20" x2="6" y2="16"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Personal & Business Finance Tracking</h3>
+                        <p class="service-card-description">
+                            Budgeting, expense/income tracking, financial reports, and portfolio monitoring. Privacy-first tool for solopreneurs, small businesses, or owners managing cash flow and investments.
+                        </p>
+                    </article>
+
+                    <!-- Service 9: Web Analytics -->
+                    <article class="service-card fade-in fade-in-delay-9">
+                        <div class="service-card-icon">
+                            <!-- Pie Chart Icon -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+                                <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Privacy-Focused Web Analytics</h3>
+                        <p class="service-card-description">
+                            Cookie-free website traffic insights and performance tracking. GDPR-compliant alternative for monitoring visitors without sending data to external providers.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             CONTACT SECTION
+             ============================================ -->
+        <section id="contact" class="contact section" aria-labelledby="contact-heading">
+            <!-- Background decorative elements -->
+            <div class="contact-bg" aria-hidden="true">
+                <div class="contact-bg-gradient contact-bg-gradient--1"></div>
+                <div class="contact-bg-gradient contact-bg-gradient--2"></div>
+            </div>
+
+            <div class="container contact-container">
+                <!-- Content -->
+                <div class="contact-content fade-in">
+                    <span class="section-label">Get in Touch</span>
+                    <h2 id="contact-heading">Let's Talk About Your IT Needs</h2>
+                    <p>
+                        Whether you need help with a specific problem or want a long-term IT partner, feel free to reach out. I'll respond personally and we can explore the best next step—no obligation.
+                    </p>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="fade-in fade-in-delay-2">
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <!-- Name Field -->
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name <span aria-hidden="true">*</span></label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="form-input"
+                                placeholder="Your name"
+                                required
+                                autocomplete="name"
+                            >
+                            <span class="form-error" role="alert"></span>
+                        </div>
+
+                        <!-- Company Field -->
+                        <div class="form-group">
+                            <label for="company" class="form-label">Company</label>
+                            <input
+                                type="text"
+                                id="company"
+                                name="company"
+                                class="form-input"
+                                placeholder="Your company (optional)"
+                                autocomplete="organization"
+                            >
+                            <span class="form-error" role="alert"></span>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email <span aria-hidden="true">*</span></label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-input"
+                                placeholder="you@company.com"
+                                required
+                                autocomplete="email"
+                            >
+                            <span class="form-error" role="alert"></span>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message <span aria-hidden="true">*</span></label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="form-input form-textarea"
+                                placeholder="Tell me about your IT needs..."
+                                required
+                            ></textarea>
+                            <span class="form-error" role="alert"></span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary form-submit">
+                            <span>Send Message</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="form-success" aria-live="polite">
+                        <div class="form-success-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-container">
+            <!-- Logo -->
+            <a href="#" class="footer-logo" aria-label="Home">
+                <span class="footer-logo-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </span>
+                <span>IT Solutions</span>
+            </a>
+
+            <!-- Footer Links -->
+            <ul class="footer-links">
+                <li><a href="#services" class="footer-link">Services</a></li>
+                <li><a href="#contact" class="footer-link">Contact</a></li>
+            </ul>
+
+            <!-- Copyright -->
+            <p class="footer-copyright">
+                &copy; <span id="current-year"></span> IT Solutions. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
 </html>
