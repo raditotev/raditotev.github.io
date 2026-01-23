@@ -423,6 +423,31 @@ a:hover {
     overflow: hidden;
 }
 
+/* Video Background */
+.hero-video-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 17, 21, 0.85);
+}
+
 /* Decorative background elements */
 .hero-bg {
     position: absolute;
