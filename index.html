@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@
 </head>
 <body>
     <!-- Skip to main content link for accessibility -->
-    <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link" data-i18n="accessibility.skipLink">Skip to main content</a>
 
     <!-- ============================================
          NAVIGATION
@@ -49,10 +49,16 @@
 
             <!-- Navigation Links -->
             <ul class="nav-links">
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
             </ul>
+
+            <!-- Language Switcher -->
+            <button class="lang-switcher" aria-label="Switch language" title="Switch language">
+                <span class="lang-switcher-current">EN</span>
+                <i class="fa-solid fa-globe"></i>
+            </button>
 
             <!-- Mobile Menu Toggle -->
             <button class="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -90,21 +96,21 @@
                 <div class="hero-content">
                     <!-- Headline -->
                     <h1 id="hero-headline" class="hero-headline fade-in">
-                        Practical IT Solutions for <span class="gradient-text">Growing Businesses</span>
+                        <span data-i18n="hero.headline">Practical IT Solutions for </span><span class="gradient-text" data-i18n="hero.headlineHighlight">Growing Businesses</span>
                     </h1>
 
                     <!-- Subheadline -->
-                    <p class="hero-subheadline fade-in fade-in-delay-1">
+                    <p class="hero-subheadline fade-in fade-in-delay-1" data-i18n="hero.subheadline">
                         I help small and medium-sized companies build, secure, and maintain reliable IT systems—without unnecessary complexity.
                     </p>
 
                     <!-- CTA Buttons -->
                     <div class="hero-cta fade-in fade-in-delay-2">
                         <a href="#contact" class="btn btn-primary">
-                            Get in Touch
+                            <span data-i18n="hero.cta.primary">Get in Touch</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="#services" class="btn btn-secondary">
+                        <a href="#services" class="btn btn-secondary" data-i18n="hero.cta.secondary">
                             View Services
                         </a>
                     </div>
@@ -113,7 +119,7 @@
 
             <!-- Scroll Indicator -->
             <a href="#services" class="hero-scroll-indicator" aria-label="Scroll to services">
-                <span>Scroll</span>
+                <span data-i18n="hero.scroll">Scroll</span>
                 <i class="fa-solid fa-chevron-down"></i>
             </a>
         </section>
@@ -125,9 +131,9 @@
             <div class="container">
                 <!-- Section Header -->
                 <div class="services-header">
-                    <span class="section-label">What I Offer</span>
-                    <h2 id="services-heading">How I Can Help</h2>
-                    <p>Reliable, self-hosted solutions that give you complete control over your data and infrastructure.</p>
+                    <span class="section-label" data-i18n="services.label">What I Offer</span>
+                    <h2 id="services-heading" data-i18n="services.heading">How I Can Help</h2>
+                    <p data-i18n="services.description">Reliable, self-hosted solutions that give you complete control over your data and infrastructure.</p>
                 </div>
 
                 <!-- Services Grid -->
@@ -138,8 +144,8 @@
                         <div class="service-card-icon">
                             <i class="fa-solid fa-cloud"></i>
                         </div>
-                        <h3 class="service-card-title">Private Cloud Storage & File Sync</h3>
-                        <p class="service-card-description">
+                        <h3 class="service-card-title" data-i18n="services.cards.cloud.title">Private Cloud Storage & File Sync</h3>
+                        <p class="service-card-description" data-i18n="services.cards.cloud.description">
                             Securely store, sync, and share files across devices and teams. Includes built-in calendars, contacts, tasks, and collaborative document editing — a full replacement for commercial cloud drives with no subscription fees or data sharing.
                         </p>
                     </article>
@@ -149,8 +155,8 @@
                         <div class="service-card-icon">
                             <i class="fa-solid fa-users"></i>
                         </div>
-                        <h3 class="service-card-title">Team Collaboration & Knowledge Workspace</h3>
-                        <p class="service-card-description">
+                        <h3 class="service-card-title" data-i18n="services.cards.collaboration.title">Team Collaboration & Knowledge Workspace</h3>
+                        <p class="service-card-description" data-i18n="services.cards.collaboration.description">
                             All-in-one platform for notes, wikis, project boards, databases, whiteboards, and mind maps. Perfect for team brainstorming, documentation, task tracking, and replacing scattered productivity tools.
                         </p>
                     </article>
@@ -160,8 +166,8 @@
                         <div class="service-card-icon">
                             <i class="fa-solid fa-key"></i>
                         </div>
-                        <h3 class="service-card-title">Secure Password Management</h3>
-                        <p class="service-card-description">
+                        <h3 class="service-card-title" data-i18n="services.cards.password.title">Secure Password Management</h3>
+                        <p class="service-card-description" data-i18n="services.cards.password.description">
                             Centralized, encrypted password vault for individuals and teams. Features shared credentials, 2FA storage, secure sharing, and emergency access — enterprise-grade security without third-party risks or recurring costs.
                         </p>
                     </article>
@@ -171,8 +177,8 @@
                         <div class="service-card-icon">
                             <i class="fa-solid fa-network-wired"></i>
                         </div>
-                        <h3 class="service-card-title">Remote Access & Secure Networking</h3>
-                        <p class="service-card-description">
+                        <h3 class="service-card-title" data-i18n="services.cards.remote.title">Remote Access & Secure Networking</h3>
+                        <p class="service-card-description" data-i18n="services.cards.remote.description">
                             Zero-configuration private network that connects remote workers, devices, and offices effortlessly. Enables secure access to internal resources from anywhere without complex VPN setups or port forwarding.
                         </p>
                     </article>
@@ -182,8 +188,8 @@
                         <div class="service-card-icon">
                             <i class="fa-solid fa-comments"></i>
                         </div>
-                        <h3 class="service-card-title">Team Messaging & Communication</h3>
-                        <p class="service-card-description">
+                        <h3 class="service-card-title" data-i18n="services.cards.messaging.title">Team Messaging & Communication</h3>
+                        <p class="service-card-description" data-i18n="services.cards.messaging.description">
                             Real-time chat with channels, direct messages, file sharing, and integrations. Full control over conversations and data — a privacy-focused alternative to mainstream team chat platforms.
                         </p>
                     </article>
@@ -193,8 +199,8 @@
                         <div class="service-card-icon">
                             <i class="fa-solid fa-code-branch"></i>
                         </div>
-                        <h3 class="service-card-title">Private Code Hosting & Development</h3>
-                        <p class="service-card-description">
+                        <h3 class="service-card-title" data-i18n="services.cards.code.title">Private Code Hosting & Development</h3>
+                        <p class="service-card-description" data-i18n="services.cards.code.description">
                             Self-hosted Git repositories with issue tracking, pull requests, wikis, and basic CI/CD. Ideal for internal projects, client work, or dev teams needing private repos without SaaS limitations.
                         </p>
                     </article>
@@ -204,8 +210,8 @@
                         <div class="service-card-icon">
                             <i class="fa-solid fa-table-columns"></i>
                         </div>
-                        <h3 class="service-card-title">Low-Code Internal Tools & Dashboards</h3>
-                        <p class="service-card-description">
+                        <h3 class="service-card-title" data-i18n="services.cards.lowcode.title">Low-Code Internal Tools & Dashboards</h3>
+                        <p class="service-card-description" data-i18n="services.cards.lowcode.description">
                             Build custom admin panels, forms, CRUD apps, and business dashboards connected to your data sources. Rapidly automate workflows, reporting, and internal processes without heavy coding.
                         </p>
                     </article>
@@ -215,8 +221,8 @@
                         <div class="service-card-icon">
                             <i class="fa-solid fa-chart-column"></i>
                         </div>
-                        <h3 class="service-card-title">Personal & Business Finance Tracking</h3>
-                        <p class="service-card-description">
+                        <h3 class="service-card-title" data-i18n="services.cards.finance.title">Personal & Business Finance Tracking</h3>
+                        <p class="service-card-description" data-i18n="services.cards.finance.description">
                             Budgeting, expense/income tracking, financial reports, and portfolio monitoring. Privacy-first tool for solopreneurs, small businesses, or owners managing cash flow and investments.
                         </p>
                     </article>
@@ -226,8 +232,8 @@
                         <div class="service-card-icon">
                             <i class="fa-solid fa-chart-pie"></i>
                         </div>
-                        <h3 class="service-card-title">Privacy-Focused Web Analytics</h3>
-                        <p class="service-card-description">
+                        <h3 class="service-card-title" data-i18n="services.cards.analytics.title">Privacy-Focused Web Analytics</h3>
+                        <p class="service-card-description" data-i18n="services.cards.analytics.description">
                             Cookie-free website traffic insights and performance tracking. GDPR-compliant alternative for monitoring visitors without sending data to external providers.
                         </p>
                     </article>
@@ -243,7 +249,7 @@
             <div class="container">
                 <!-- Section Header -->
                 <div class="trust-header">
-                    <h2 id="trust-heading">Why Self-Hosted?</h2>
+                    <h2 id="trust-heading" data-i18n="trust.heading">Why Self-Hosted?</h2>
                 </div>
 
                 <!-- Trust Grid -->
@@ -253,8 +259,8 @@
                         <div class="trust-card-icon">
                             <i class="fa-solid fa-user-shield"></i>
                         </div>
-                        <h3 class="trust-card-title">Data Sovereignty</h3>
-                        <p class="trust-card-description">
+                        <h3 class="trust-card-title" data-i18n="trust.cards.sovereignty.title">Data Sovereignty</h3>
+                        <p class="trust-card-description" data-i18n="trust.cards.sovereignty.description">
                             Your data lives on your servers. No third-party access, mining, or selling of your information.
                         </p>
                     </article>
@@ -264,8 +270,8 @@
                         <div class="trust-card-icon">
                             <i class="fa-solid fa-hand-holding-dollar"></i>
                         </div>
-                        <h3 class="trust-card-title">Cost Efficiency</h3>
-                        <p class="trust-card-description">
+                        <h3 class="trust-card-title" data-i18n="trust.cards.cost.title">Cost Efficiency</h3>
+                        <p class="trust-card-description" data-i18n="trust.cards.cost.description">
                             Stop paying per-user monthly fees. Invest in infrastructure once and scale without penalty.
                         </p>
                     </article>
@@ -275,8 +281,8 @@
                         <div class="trust-card-icon">
                             <i class="fa-solid fa-puzzle-piece"></i>
                         </div>
-                        <h3 class="trust-card-title">Architectural Flexibility</h3>
-                        <p class="trust-card-description">
+                        <h3 class="trust-card-title" data-i18n="trust.cards.flexibility.title">Architectural Flexibility</h3>
+                        <p class="trust-card-description" data-i18n="trust.cards.flexibility.description">
                             Tailor the stack precisely to your requirements.
                         </p>
                     </article>
@@ -297,9 +303,9 @@
             <div class="container contact-container">
                 <!-- Content -->
                 <div class="contact-content fade-in">
-                    <span class="section-label">Get in Touch</span>
-                    <h2 id="contact-heading">Let's Talk About Your IT Needs</h2>
-                    <p>
+                    <span class="section-label" data-i18n="contact.label">Get in Touch</span>
+                    <h2 id="contact-heading" data-i18n="contact.heading">Let's Talk About Your IT Needs</h2>
+                    <p data-i18n="contact.description">
                         Whether you need help with a specific problem or want a long-term IT partner, feel free to reach out. I'll respond personally and we can explore the best next step—no obligation.
                     </p>
                 </div>
@@ -309,12 +315,13 @@
                     <form id="contact-form" class="contact-form" novalidate>
                         <!-- Name Field -->
                         <div class="form-group">
-                            <label for="name" class="form-label">Name <span aria-hidden="true">*</span></label>
+                            <label for="name" class="form-label" data-i18n="contact.form.name.label">Name <span aria-hidden="true">*</span></label>
                             <input
                                 type="text"
                                 id="name"
                                 name="name"
                                 class="form-input"
+                                data-i18n-placeholder="contact.form.name.placeholder"
                                 placeholder="Your name"
                                 required
                                 autocomplete="name"
@@ -324,12 +331,13 @@
 
                         <!-- Company Field -->
                         <div class="form-group">
-                            <label for="company" class="form-label">Company</label>
+                            <label for="company" class="form-label" data-i18n="contact.form.company.label">Company</label>
                             <input
                                 type="text"
                                 id="company"
                                 name="company"
                                 class="form-input"
+                                data-i18n-placeholder="contact.form.company.placeholder"
                                 placeholder="Your company (optional)"
                                 autocomplete="organization"
                             >
@@ -338,12 +346,13 @@
 
                         <!-- Email Field -->
                         <div class="form-group">
-                            <label for="email" class="form-label">Email <span aria-hidden="true">*</span></label>
+                            <label for="email" class="form-label" data-i18n="contact.form.email.label">Email <span aria-hidden="true">*</span></label>
                             <input
                                 type="email"
                                 id="email"
                                 name="email"
                                 class="form-input"
+                                data-i18n-placeholder="contact.form.email.placeholder"
                                 placeholder="you@company.com"
                                 required
                                 autocomplete="email"
@@ -353,11 +362,12 @@
 
                         <!-- Message Field -->
                         <div class="form-group">
-                            <label for="message" class="form-label">Message <span aria-hidden="true">*</span></label>
+                            <label for="message" class="form-label" data-i18n="contact.form.message.label">Message <span aria-hidden="true">*</span></label>
                             <textarea
                                 id="message"
                                 name="message"
                                 class="form-input form-textarea"
+                                data-i18n-placeholder="contact.form.message.placeholder"
                                 placeholder="Tell me about your IT needs..."
                                 required
                             ></textarea>
@@ -366,7 +376,7 @@
 
                         <!-- Submit Button -->
                         <button type="submit" class="btn btn-primary form-submit">
-                            <span>Send Message</span>
+                            <span data-i18n="contact.form.submit">Send Message</span>
                             <i class="fa-solid fa-paper-plane"></i>
                         </button>
                     </form>
@@ -376,8 +386,8 @@
                         <div class="form-success-icon">
                             <i class="fa-solid fa-check"></i>
                         </div>
-                        <h3>Message Sent!</h3>
-                        <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                        <h3 data-i18n="contact.success.title">Message Sent!</h3>
+                        <p data-i18n="contact.success.description">Thank you for reaching out. I'll get back to you as soon as possible.</p>
                     </div>
                 </div>
             </div>
@@ -397,14 +407,14 @@
 
             <!-- Footer Links -->
             <ul class="footer-links">
-                <li><a href="#services" class="footer-link">Services</a></li>
-                <li><a href="#about" class="footer-link">About</a></li>
-                <li><a href="#contact" class="footer-link">Contact</a></li>
+                <li><a href="#services" class="footer-link" data-i18n="nav.services">Services</a></li>
+                <li><a href="#about" class="footer-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#contact" class="footer-link" data-i18n="nav.contact">Contact</a></li>
             </ul>
 
             <!-- Copyright -->
             <p class="footer-copyright">
-                &copy; <span id="current-year"></span> IT Solutions. All rights reserved.
+                &copy; <span id="current-year"></span> <span data-i18n="footer.copyright">IT Solutions. All rights reserved.</span>
             </p>
         </div>
     </footer>
