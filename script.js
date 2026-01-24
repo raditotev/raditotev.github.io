@@ -650,7 +650,7 @@
             };
 
             try {
-                const response = await fetch('https://mailserver.radi.pro/radipro-requests', {
+                const response = await fetch('https://mailserver.radi.pro/submit', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
