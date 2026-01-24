@@ -618,12 +618,8 @@
             handleFormSubmission(formData);
         });
 
-        // Placeholder form submission handler
-        function handleFormSubmission(data) {
-            // Log the form data (for development)
-            console.log('Form submitted:', data);
-
-            // Simulate a brief delay (like an API call)
+        // Form submission handler - sends to mailserver
+        async function handleFormSubmission(data) {
             const submitButton = contactForm.querySelector('.form-submit');
             const originalButtonText = submitButton.innerHTML;
             const sendingText = getTranslation('contact.form.sending') || 'Sending...';
@@ -631,7 +627,41 @@
             submitButton.innerHTML = '<span>' + sendingText + '</span>';
             submitButton.disabled = true;
 
-            setTimeout(function() {
+            // Build the email body with HTML formatting
+            const emailBody = `
+                <h2>New Contact Form Submission</h2>
+                <p><strong>Name:</strong> ${escapeHtml(data.name)}</p>
+                ${data.company ? '<p><strong>Company:</strong> ' + escapeHtml(data.company) + '</p>' : ''}
+                <p><strong>Email:</strong> ${escapeHtml(data.email)}</p>
+                <hr>
+                <h3>Message:</h3>
+                <p>${escapeHtml(data.message).replace(/\n/g, '<br>')}</p>
+                <hr>
+                <p><small>Submitted on: ${new Date().toLocaleString()}</small></p>
+            `;
+
+            // Prepare the payload for the mailform API
+            const payload = {
+                from: data.email,
+                firstName: data.name,
+                subjectPrefix: '[Website Contact]',
+                subject: data.company ? `Message from ${data.name} (${data.company})` : `Message from ${data.name}`,
+                body: emailBody
+            };
+
+            try {
+                const response = await fetch('https://mailserver.radi.pro/radipro-requests', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to send message');
+                }
+
                 // Hide the form
                 contactForm.style.display = 'none';
 
@@ -640,34 +670,27 @@
                     formSuccess.classList.add('visible');
                 }
 
-                // Reset button (in case form is shown again)
-                submitButton.innerHTML = originalButtonText;
-                submitButton.disabled = false;
-
                 // Reset form fields
                 contactForm.reset();
-            }, 1000);
 
-            /*
-             * PRODUCTION IMPLEMENTATION OPTIONS:
-             *
-             * 1. Formspree (free tier available):
-             *    fetch('https://formspree.io/f/YOUR_FORM_ID', {
-             *        method: 'POST',
-             *        body: JSON.stringify(data),
-             *        headers: { 'Content-Type': 'application/json' }
-             *    });
-             *
-             * 2. Netlify Forms:
-             *    Add data-netlify="true" to your form element
-             *
-             * 3. Custom backend endpoint:
-             *    fetch('/api/contact', {
-             *        method: 'POST',
-             *        body: JSON.stringify(data),
-             *        headers: { 'Content-Type': 'application/json' }
-             *    });
-             */
+            } catch (error) {
+                console.error('Form submission error:', error);
+                // Show error to user
+                alert(currentLang === 'bg'
+                    ? 'Възникна грешка при изпращането. Моля, опитайте отново.'
+                    : 'An error occurred while sending. Please try again.');
+            } finally {
+                // Reset button state
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+            }
+        }
+
+        // Helper function to escape HTML entities
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
     }
 
