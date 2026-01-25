@@ -359,9 +359,15 @@
 
   // Switch language
   function switchLanguage() {
+    const previousLang = currentLang
     currentLang = currentLang === 'en' ? 'bg' : 'en'
     localStorage.setItem('lang', currentLang)
     applyTranslations()
+    // Track language switch
+    trackEvent('Language Switch', {
+      from: previousLang,
+      to: currentLang,
+    })
   }
 
   // Initialize language switcher
@@ -424,15 +430,30 @@
 
       // Prevent body scroll when menu is open
       document.body.style.overflow = isOpen ? '' : 'hidden'
+
+      // Track mobile menu toggle
+      trackEvent('Mobile Menu', {
+        action: isOpen ? 'close' : 'open',
+      })
     })
 
     // Close mobile menu when clicking a link
     navLinkItems.forEach(function (link) {
       link.addEventListener('click', function () {
+        const linkText = this.textContent.trim()
+        const linkHref = this.getAttribute('href')
+
         navLinks.classList.remove('open')
         navToggle.classList.remove('active')
         navToggle.setAttribute('aria-expanded', 'false')
         document.body.style.overflow = ''
+
+        // Track navigation link click
+        trackEvent('Navigation Click', {
+          link: linkText,
+          href: linkHref,
+          location: 'mobile-menu',
+        })
       })
     })
 
@@ -469,6 +490,18 @@
         window.scrollTo({
           top: targetPosition,
           behavior: 'smooth',
+        })
+
+        // Track anchor link click (navigation and CTAs)
+        const linkText = this.textContent.trim()
+        const isCTA = this.classList.contains('btn-primary') || this.classList.contains('btn-secondary')
+        const isScrollIndicator = this.classList.contains('hero-scroll-indicator')
+        const location = isCTA ? 'cta' : isScrollIndicator ? 'scroll-indicator' : 'navigation'
+
+        trackEvent('Anchor Click', {
+          target: targetId,
+          link: linkText,
+          location: location,
         })
       }
     })
@@ -635,6 +668,16 @@
 
       // Validate all fields
       if (!validateForm()) {
+        // Track form validation error
+        const errorFields = contactForm.querySelectorAll('.form-input.error, .form-textarea.error')
+        const errorFieldNames = Array.from(errorFields).map(function (field) {
+          return field.id || field.name
+        })
+        trackEvent('Contact Form Validation Error', {
+          fields: errorFieldNames.join(','),
+          count: errorFields.length,
+        })
+
         // Focus first error field
         const firstError = contactForm.querySelector(
           '.form-input.error, .form-textarea.error',
@@ -713,10 +756,21 @@ Submitted on: ${new Date().toLocaleString()}`
           formSuccess.classList.add('visible')
         }
 
+        // Track successful form submission
+        trackEvent('Contact Form Submit', {
+          success: true,
+          hasCompany: !!data.company,
+        })
+
         // Reset form fields
         contactForm.reset()
       } catch (error) {
         console.error('Form submission error:', error)
+        // Track form submission error
+        trackEvent('Contact Form Submit', {
+          success: false,
+          error: 'submission_failed',
+        })
         // Show error to user
         alert(
           currentLang === 'bg'
@@ -739,6 +793,46 @@ Submitted on: ${new Date().toLocaleString()}`
   }
 
   /* ============================================
+       ANALYTICS - Event Tracking
+       ============================================ */
+  // Helper function to track events with Plausible Analytics
+  function trackEvent(eventName, props) {
+    if (typeof window.plausible === 'function') {
+      window.plausible(eventName, { props: props || {} })
+    }
+  }
+
+  // Track section views when they come into viewport
+  function initSectionViewTracking() {
+    const sections = document.querySelectorAll('section[id]')
+    const viewedSections = new Set()
+
+    if (sections.length === 0) return
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3, // Track when 30% of section is visible
+    }
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !viewedSections.has(entry.target.id)) {
+          viewedSections.add(entry.target.id)
+          const sectionName = entry.target.id || 'unknown'
+          trackEvent('Section View', {
+            section: sectionName,
+          })
+        }
+      })
+    }, observerOptions)
+
+    sections.forEach(function (section) {
+      observer.observe(section)
+    })
+  }
+
+  /* ============================================
        FOOTER - Dynamic Year
        ============================================ */
   const yearSpan = document.getElementById('current-year')
@@ -750,6 +844,16 @@ Submitted on: ${new Date().toLocaleString()}`
        INITIALIZE LANGUAGE SYSTEM
        ============================================ */
   initLanguageSwitcher()
+
+  /* ============================================
+       INITIALIZE ANALYTICS TRACKING
+       ============================================ */
+  // Initialize section view tracking when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSectionViewTracking)
+  } else {
+    initSectionViewTracking()
+  }
 
   /* ============================================
        KEYBOARD ACCESSIBILITY
