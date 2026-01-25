@@ -494,9 +494,17 @@
 
         // Track anchor link click (navigation and CTAs)
         const linkText = this.textContent.trim()
-        const isCTA = this.classList.contains('btn-primary') || this.classList.contains('btn-secondary')
-        const isScrollIndicator = this.classList.contains('hero-scroll-indicator')
-        const location = isCTA ? 'cta' : isScrollIndicator ? 'scroll-indicator' : 'navigation'
+        const isCTA =
+          this.classList.contains('btn-primary') ||
+          this.classList.contains('btn-secondary')
+        const isScrollIndicator = this.classList.contains(
+          'hero-scroll-indicator',
+        )
+        const location = isCTA
+          ? 'cta'
+          : isScrollIndicator
+            ? 'scroll-indicator'
+            : 'navigation'
 
         trackEvent('Anchor Click', {
           target: targetId,
@@ -669,7 +677,9 @@
       // Validate all fields
       if (!validateForm()) {
         // Track form validation error
-        const errorFields = contactForm.querySelectorAll('.form-input.error, .form-textarea.error')
+        const errorFields = contactForm.querySelectorAll(
+          '.form-input.error, .form-textarea.error',
+        )
         const errorFieldNames = Array.from(errorFields).map(function (field) {
           return field.id || field.name
         })
@@ -711,28 +721,13 @@
       submitButton.innerHTML = '<span>' + sendingText + '</span>'
       submitButton.disabled = true
 
-      // Build the email body as plain text
-      const emailBody = `New Contact Form Submission \n\n
-
-Name: ${data.name} \n
-${data.company ? 'Company: ' + data.company + '\n' : ''} \n
-Email: ${data.email} \n
-
-Message: \n
-${data.message} \n\n
-
----
-Submitted on: ${new Date().toLocaleString()}`
-
       // Prepare the payload for the mailform API
       const payload = {
+        timestamp: new Date().toISOString(),
         from: data.email,
-        firstName: data.name,
-        subjectPrefix: '[Website Contact]',
-        subject: data.company
-          ? `Message from ${data.name} (${data.company})`
-          : `Message from ${data.name}`,
-        body: emailBody,
+        name: data.name,
+        company: data.company || 'N/A',
+        message: data.message,
       }
 
       try {
