@@ -1,6 +1,6 @@
 /* ============================================
-   FREELANCE IT PROFESSIONAL - SCRIPT.JS
-   Vanilla JavaScript | No Dependencies
+   RADI TOTEV — radi.pro
+   Vanilla JavaScript | No dependencies
    ============================================ */
 
 ;(function () {
@@ -11,126 +11,144 @@
        ============================================ */
   const translations = {
     en: {
-      accessibility: {
-        skipLink: 'Skip to main content',
-      },
+      accessibility: { skipLink: 'Skip to main content' },
       nav: {
         services: 'Services',
-        about: 'About',
+        approach: 'Approach',
         contact: 'Contact',
+        ai: 'AI Services',
       },
       hero: {
-        headline: 'Practical IT Solutions for ',
-        headlineHighlight: 'Growing Businesses',
+        eyebrow: 'Independent IT practice',
+        headline: 'Infrastructure you actually ',
+        headlineEm: 'own',
+        headlineEnd: '.',
         subheadline:
-          'I help small and medium-sized companies build, secure, and maintain reliable IT systems—without unnecessary complexity.',
+          'I build and maintain self-hosted systems for small and mid-sized companies — the tools your team uses every day, running on servers you control, without per-seat fees or third parties reading your data.',
         cta: {
-          primary: 'Get in Touch',
-          secondary: 'View Services',
+          primary: 'Start a conversation',
+          secondary: 'See what I run',
         },
-        scroll: 'Scroll',
       },
       services: {
-        label: 'What I Offer',
-        heading: 'How I Can Help',
+        label: '01 — Services',
+        heading: 'Eleven systems, one stack.',
         description:
-          'Reliable, self-hosted solutions that give you complete control over your data and infrastructure.',
-        cards: {
+          "Each of these replaces a subscription you're probably already paying for. They run on the same infrastructure, share one login, and stay yours. Open any line to see what it covers.",
+        items: {
           cloud: {
-            title: 'Private Cloud Storage & File Sync',
+            title: 'Private cloud storage & file sync',
             description:
-              'Securely store, sync, and share files across devices and teams. Includes built-in calendars, contacts, tasks, and collaborative document editing — a full replacement for commercial cloud drives with no subscription fees or data sharing.',
+              'Files, calendars, contacts and shared documents in one place, synced across every device your team uses. Collaborative editing included. Behaves like the commercial drives, with no seat pricing and no data leaving your server.',
           },
-          collaboration: {
-            title: 'Team Collaboration & Knowledge Workspace',
+          workspace: {
+            title: 'Knowledge base & project workspace',
             description:
-              'All-in-one platform for notes, wikis, project boards, databases, whiteboards, and mind maps. Perfect for team brainstorming, documentation, task tracking, and replacing scattered productivity tools.',
+              'Notes, wikis, boards, databases and whiteboards in a single workspace. The place documentation actually gets written and tasks stop living in four different tools.',
           },
           password: {
-            title: 'Secure Password Management',
+            title: 'Password & credential management',
             description:
-              'Centralized, encrypted password vault for individuals and teams. Features shared credentials, 2FA storage, secure sharing, and emergency access — enterprise-grade security without third-party risks or recurring costs.',
+              'An encrypted vault for the whole company: shared credentials, 2FA codes, secure hand-offs and emergency access. The same security model the enterprise tools use, without trusting a vendor with the keys.',
           },
           remote: {
-            title: 'Remote Access & Secure Networking',
+            title: 'Remote access & private networking',
             description:
-              'Zero-configuration private network that connects remote workers, devices, and offices effortlessly. Enables secure access to internal resources from anywhere without complex VPN setups or port forwarding.',
+              'A private network that connects staff, offices and devices without VPN configuration or port forwarding. Internal systems reachable from anywhere, invisible to everyone else.',
           },
           messaging: {
-            title: 'Team Messaging & Communication',
+            title: 'Team messaging',
             description:
-              'Real-time chat with channels, direct messages, file sharing, and integrations. Full control over conversations and data — a privacy-focused alternative to mainstream team chat platforms.',
+              'Channels, direct messages, file sharing and integrations — with the message history stored on your side rather than rented back to you a year at a time.',
           },
           code: {
-            title: 'Private Code Hosting & Development',
+            title: 'Private code hosting & CI',
             description:
-              'Self-hosted Git repositories with issue tracking, pull requests, wikis, and basic CI/CD. Ideal for internal projects, client work, or dev teams needing private repos without SaaS limitations.',
+              'Git repositories with issues, pull requests, wikis and build pipelines. Unlimited private repos for internal work and client projects, no minute quotas.',
           },
-          lowcode: {
-            title: 'Low-Code Internal Tools & Dashboards',
+          tools: {
+            title: 'Internal tools & dashboards',
             description:
-              'Build custom admin panels, forms, CRUD apps, and business dashboards connected to your data sources. Rapidly automate workflows, reporting, and internal processes without heavy coding.',
+              'Admin panels, forms and reporting views built on top of the data you already have. Useful for the workflows that currently live in a spreadsheet somebody guards.',
           },
           finance: {
-            title: 'Personal & Business Finance Tracking',
+            title: 'Finance & expense tracking',
             description:
-              'Budgeting, expense/income tracking, financial reports, and portfolio monitoring. Privacy-first tool for solopreneurs, small businesses, or owners managing cash flow and investments.',
+              'Budgets, income and expense tracking, reports and portfolio monitoring for owner-managed businesses. Financial detail that never touches a third-party account.',
           },
           analytics: {
-            title: 'Privacy-Focused Web Analytics',
+            title: 'Cookie-free web analytics',
             description:
-              'Cookie-free website traffic insights and performance tracking. GDPR-compliant alternative for monitoring visitors without sending data to external providers.',
+              'Traffic and performance figures without cookies, consent banners or a data-sharing arrangement. GDPR-clean by construction. This site runs it.',
+          },
+          backup: {
+            title: 'Backup & disaster recovery',
+            description:
+              'Encrypted, versioned, off-site backups of every system above, with restores tested on a schedule rather than assumed. The part nobody thinks about until the morning they need it.',
+          },
+          monitoring: {
+            title: 'Monitoring, updates & alerting',
+            description:
+              'Uptime checks, resource alerts and a patching routine for the whole stack. You hear about a problem from me, before your team files a ticket about it.',
           },
         },
       },
-      trust: {
-        heading: 'Why Self-Hosted?',
+      ai: {
+        label: 'Separate practice',
+        heading: 'AI, on the same terms.',
+        description:
+          "Private models, retrieval over your own documents, and assistants that run inside your infrastructure rather than sending your work to somebody else's API. Kept on its own site.",
+      },
+      approach: {
+        label: '02 — Approach',
+        heading: 'Why anyone would host their own.',
         cards: {
           sovereignty: {
-            title: 'Data Sovereignty',
+            title: 'Your data stays yours',
             description:
-              'Your data lives on your servers. No third-party access, mining, or selling of your information.',
+              "It sits on hardware you control. Nobody mines it, trains on it, or changes the terms under which you're allowed to keep it.",
           },
           cost: {
-            title: 'Cost Efficiency',
+            title: 'Growth stops costing extra',
             description:
-              'Stop paying per-user monthly fees. Invest in infrastructure once and scale without penalty.',
+              'Per-seat pricing means every hire raises the bill on six tools at once. Infrastructure is bought once and scales without a renegotiation.',
           },
           flexibility: {
-            title: 'Architectural Flexibility',
-            description: 'Tailor the stack precisely to your requirements.',
+            title: 'The stack fits the company',
+            description:
+              "You run the components you need and skip the rest. No working around a roadmap set by somebody else's average customer.",
           },
         },
       },
       contact: {
-        label: 'Get in Touch',
-        heading: "Let's Talk About Your IT Needs",
+        label: '03 — Contact',
+        heading: "Tell me what's breaking.",
         description:
-          "Whether you need help with a specific problem or want a long-term IT partner, feel free to reach out. I'll respond personally and we can explore the best next step—no obligation.",
+          "One specific problem or a long-term arrangement — either is a fine place to start. I read and answer these myself, usually within a day, and there's no obligation attached to asking.",
+        facts: {
+          based: { label: 'Based in', value: 'Bulgaria — working remotely' },
+          languages: { label: 'Languages', value: 'English, Bulgarian' },
+          response: { label: 'Response time', value: 'Within one working day' },
+        },
         form: {
-          name: {
-            label: 'Name *',
-            placeholder: 'Your name',
-          },
+          name: { label: 'Name', placeholder: 'Your name' },
           company: {
             label: 'Company',
-            placeholder: 'Your company (optional)',
+            optional: '(optional)',
+            placeholder: 'Where you work',
           },
-          email: {
-            label: 'Email *',
-            placeholder: 'you@company.com',
-          },
+          email: { label: 'Email', placeholder: 'you@company.com' },
           message: {
-            label: 'Message *',
-            placeholder: 'Tell me about your IT needs...',
+            label: 'Message',
+            placeholder: 'What are you trying to fix or move off?',
           },
-          submit: 'Send Message',
-          sending: 'Sending...',
+          submit: 'Send message',
+          sending: 'Sending…',
         },
         success: {
-          title: 'Message Sent!',
-          description:
-            "Thank you for reaching out. I'll get back to you as soon as possible.",
+          label: 'Received',
+          title: "Thanks — it's with me.",
+          description: "I'll read it properly and reply within a working day.",
         },
         validation: {
           nameRequired: 'Please enter your name',
@@ -140,133 +158,149 @@
           messageRequired: 'Please enter a message',
           messageMinLength: 'Message must be at least 10 characters',
         },
-      },
-      footer: {
-        copyright: 'IT Solutions. All rights reserved.',
+        error: 'An error occurred while sending. Please try again.',
       },
     },
+
     bg: {
-      accessibility: {
-        skipLink: 'Към основното съдържание',
-      },
+      accessibility: { skipLink: 'Към основното съдържание' },
       nav: {
         services: 'Услуги',
-        about: 'За мен',
+        approach: 'Подход',
         contact: 'Контакт',
+        ai: 'AI услуги',
       },
       hero: {
-        headline: 'Практични ИТ решения за ',
-        headlineHighlight: 'Развиващи се Бизнеси',
+        eyebrow: 'Независима ИТ практика',
+        headline: 'Инфраструктура, която наистина е ',
+        headlineEm: 'ваша',
+        headlineEnd: '.',
         subheadline:
-          'Помагам на малки и средни компании да изграждат, защитават и поддържат надеждни ИТ системи — без излишни усложнения.',
+          'Изграждам и поддържам собствено хоствани системи за малки и средни компании — инструментите, които екипът ви ползва всеки ден, работещи на сървъри под ваш контрол, без такси на потребител и без трети страни, четящи данните ви.',
         cta: {
-          primary: 'Свържете се',
+          primary: 'Започнете разговор',
           secondary: 'Вижте услугите',
         },
-        scroll: 'Превъртете',
       },
       services: {
-        label: 'Какво предлагам',
-        heading: 'С какво мога да помогна',
+        label: '01 — Услуги',
+        heading: 'Единадесет системи, една инфраструктура.',
         description:
-          'Надеждни решения с пълен контрол върху данните и инфраструктурата ви.',
-        cards: {
+          'Всяка от тях заменя абонамент, който вероятно вече плащате. Работят на една инфраструктура, с един логин, и остават ваши. Отворете ред, за да видите какво покрива.',
+        items: {
           cloud: {
-            title: 'Частно облачно съхранение',
+            title: 'Частно облачно съхранение и синхронизация',
             description:
-              'Сигурно съхранение, синхронизация и споделяне на файлове между устройства и екипи. Включва вградени календари, контакти, задачи и съвместно редактиране на документи — пълна замяна на комерсиални облачни услуги без абонаментни такси.',
+              'Файлове, календари, контакти и общи документи на едно място, синхронизирани на всички устройства на екипа. Съвместно редактиране е включено. Работи като комерсиалните облаци, без цена на потребител и без данни да напускат сървъра ви.',
           },
-          collaboration: {
-            title: 'Екипно сътрудничество',
+          workspace: {
+            title: 'База знания и работно пространство',
             description:
-              'Платформа всичко-в-едно за бележки, уикита, проектни дъски, бази данни, дъски за рисуване и мисловни карти. Идеална за екипен брейнсторминг, документация и проследяване на задачи.',
+              'Бележки, уикита, дъски, бази данни и бели дъски в едно пространство. Мястото, където документацията действително се пише и задачите спират да живеят в четири различни инструмента.',
           },
           password: {
-            title: 'Сигурно управление на пароли',
+            title: 'Управление на пароли и достъпи',
             description:
-              'Централизирано, криптирано хранилище за пароли за индивиди и екипи. Включва споделени идентификационни данни, съхранение на 2FA, сигурно споделяне и авариен достъп — корпоративна сигурност без рискове от трети страни.',
+              'Криптирано хранилище за цялата компания: споделени данни за достъп, 2FA кодове, сигурно предаване и авариен достъп. Същият модел на сигурност като при корпоративните инструменти, без ключовете да са у доставчик.',
           },
           remote: {
-            title: 'Отдалечен достъп и сигурни мрежи',
+            title: 'Отдалечен достъп и частна мрежа',
             description:
-              'Частна мрежа без конфигурация, която свързва отдалечени работници, устройства и офиси лесно. Осигурява сигурен достъп до вътрешни ресурси отвсякъде без сложни VPN настройки.',
+              'Частна мрежа, която свързва служители, офиси и устройства без VPN конфигурация или пренасочване на портове. Вътрешните системи са достъпни отвсюде и невидими за всички останали.',
           },
           messaging: {
-            title: 'Екипни съобщения и комуникация',
+            title: 'Екипни съобщения',
             description:
-              'Чат в реално време с канали, директни съобщения, споделяне на файлове и интеграции. Пълен контрол върху разговорите и данните — алтернатива на масовите чат платформи с фокус върху поверителността.',
+              'Канали, директни съобщения, споделяне на файлове и интеграции — с историята на съобщенията, съхранявана при вас, а не преотдавана ви под наем година за година.',
           },
           code: {
-            title: 'Частен хостинг на код',
+            title: 'Частен хостинг на код и CI',
             description:
-              'Собствени Git хранилища с проследяване на проблеми, pull заявки, уикита и основен CI/CD. Идеално за вътрешни проекти, клиентска работа или екипи, нуждаещи се от частни хранилища.',
+              'Git хранилища с тикети, pull заявки, уикита и пайплайни за билд. Неограничени частни репозитории за вътрешна и клиентска работа, без лимити в минути.',
           },
-          lowcode: {
-            title: 'Low-Code инструменти и табла',
+          tools: {
+            title: 'Вътрешни инструменти и табла',
             description:
-              'Създавайте персонализирани админ панели, формуляри, CRUD приложения и бизнес табла, свързани с вашите източници на данни. Бърза автоматизация на работни процеси без тежко програмиране.',
+              'Админ панели, формуляри и отчети върху данните, които вече имате. Полезни за процесите, които в момента живеят в електронна таблица, охранявана от един човек.',
           },
           finance: {
-            title: 'Проследяване на финанси',
+            title: 'Проследяване на финанси и разходи',
             description:
-              'Бюджетиране, проследяване на разходи/приходи, финансови отчети и мониторинг на портфолио. Инструмент с фокус върху поверителността за предприемачи и малки бизнеси.',
+              'Бюджети, проследяване на приходи и разходи, отчети и мониторинг на портфейл за бизнеси, управлявани от собственика. Финансови данни, които никога не попадат в чужд акаунт.',
           },
           analytics: {
-            title: 'Уеб анализи с фокус върху поверителността',
+            title: 'Уеб анализи без бисквитки',
             description:
-              'Анализ на уеб трафика без бисквитки. GDPR-съвместима алтернатива за мониторинг на посетители без изпращане на данни към външни доставчици.',
+              'Данни за трафик и производителност без бисквитки, банери за съгласие или споделяне на данни. GDPR-съвместими по конструкция. Този сайт използва точно това.',
+          },
+          backup: {
+            title: 'Резервни копия и възстановяване',
+            description:
+              'Криптирани, версионирани резервни копия извън обекта за всички системи по-горе, с тестване на възстановяването по график, а не по презумпция. Частта, за която никой не мисли до сутринта, в която потрябва.',
+          },
+          monitoring: {
+            title: 'Мониторинг, обновления и известия',
+            description:
+              'Проверки за достъпност, известия за ресурси и редовни обновления за целия стек. За проблем чувате от мен, преди екипът ви да подаде заявка за него.',
           },
         },
       },
-      trust: {
-        heading: 'Защо собствен хостинг?',
+      ai: {
+        label: 'Отделна практика',
+        heading: 'AI, при същите условия.',
+        description:
+          'Частни модели, търсене в собствените ви документи и асистенти, които работят във вашата инфраструктура, вместо да изпращат работата ви към чужд API. Има си собствен сайт.',
+      },
+      approach: {
+        label: '02 — Подход',
+        heading: 'Защо някой би хоствал сам.',
         cards: {
           sovereignty: {
-            title: 'Суверенитет на данните',
+            title: 'Данните остават ваши',
             description:
-              'Данните ви живеят на вашите сървъри. Без достъп от трети страни, без извличане или продаване на информацията ви.',
+              'Стоят на хардуер под ваш контрол. Никой не ги извлича, не тренира върху тях и не променя условията, при които имате право да ги запазите.',
           },
           cost: {
-            title: 'Ефективност на разходите',
+            title: 'Растежът спира да струва повече',
             description:
-              'Спрете да плащате месечни такси на потребител. Инвестирай еднократно в инфраструктура и расти без ограничения.',
+              'Цената на потребител означава, че всеки нов човек вдига сметката по шест инструмента наведнъж. Инфраструктурата се купува еднократно и се мащабира без преговори.',
           },
           flexibility: {
-            title: 'Архитектурна гъвкавост',
+            title: 'Стекът пасва на компанията',
             description:
-              'Адаптирайте софтуера си точно според вашите изисквания.',
+              'Пускате компонентите, които ви трябват, и пропускате останалите. Без да заобикаляте чужда продуктова програма.',
           },
         },
       },
       contact: {
-        label: 'Свържете се',
-        heading: 'Нека поговорим за вашите ИТ нужди',
+        label: '03 — Контакт',
+        heading: 'Кажете ми какво не работи.',
         description:
-          'Независимо дали имате нужда от помощ с конкретен проблем или искате дългосрочен ИТ партньор, не се колебайте да се свържете. Ще отговоря лично и можем да проучим най-добрата следваща стъпка — без задължение.',
+          'Конкретен проблем или дългосрочно партньорство — и двете са добро начало. Чета и отговарям лично, обикновено в рамките на ден, и въпросът не води до задължение.',
+        facts: {
+          based: { label: 'Базиран в', value: 'България — дистанционно' },
+          languages: { label: 'Езици', value: 'Английски, български' },
+          response: { label: 'Време за отговор', value: 'До един работен ден' },
+        },
         form: {
-          name: {
-            label: 'Име *',
-            placeholder: 'Вашето име',
-          },
+          name: { label: 'Име', placeholder: 'Вашето име' },
           company: {
             label: 'Компания',
-            placeholder: 'Вашата компания (незадължително)',
+            optional: '(незадължително)',
+            placeholder: 'Къде работите',
           },
-          email: {
-            label: 'Имейл *',
-            placeholder: 'вие@компания.com',
-          },
+          email: { label: 'Имейл', placeholder: 'вие@компания.com' },
           message: {
-            label: 'Съобщение *',
-            placeholder: 'Разкажете ми за вашите ИТ нужди...',
+            label: 'Съобщение',
+            placeholder: 'Какво искате да поправите или да мигрирате?',
           },
-          submit: 'Изпратете съобщение',
-          sending: 'Изпращане...',
+          submit: 'Изпрати съобщение',
+          sending: 'Изпращане…',
         },
         success: {
-          title: 'Съобщението е изпратено!',
-          description:
-            'Благодаря, че се свързахте. Ще ви отговоря възможно най-скоро.',
+          label: 'Получено',
+          title: 'Благодаря — в мен е.',
+          description: 'Ще го прочета внимателно и ще отговоря до един работен ден.',
         },
         validation: {
           nameRequired: 'Моля, въведете вашето име',
@@ -276,41 +310,36 @@
           messageRequired: 'Моля, въведете съобщение',
           messageMinLength: 'Съобщението трябва да е поне 10 символа',
         },
-      },
-      footer: {
-        copyright: 'ИТ Решения. Всички права запазени.',
+        error: 'Възникна грешка при изпращането. Моля, опитайте отново.',
       },
     },
   }
 
   /* ============================================
-       LANGUAGE SYSTEM
+       ANALYTICS HELPER
        ============================================ */
-  // Detect language from URL path
-  function detectUrlLanguage() {
-    const urlParams = new URLSearchParams(window.location.search)
-    const lang = urlParams.get('lang')
-    if (lang === 'bg' || lang === 'en') {
-      return lang
+  function trackEvent(eventName, props) {
+    if (typeof window.plausible === 'function') {
+      window.plausible(eventName, { props: props || {} })
     }
   }
 
-  // Detect browser language preference
-  function detectBrowserLanguage() {
-    const browserLang = navigator.language || navigator.userLanguage
-    // Check if browser language starts with 'bg' (e.g., 'bg', 'bg-BG')
-    return browserLang && browserLang.toLowerCase().startsWith('bg')
-      ? 'bg'
-      : 'en'
+  /* ============================================
+       LANGUAGE SYSTEM
+       ============================================ */
+  function detectUrlLanguage() {
+    const lang = new URLSearchParams(window.location.search).get('lang')
+    if (lang === 'bg' || lang === 'en') return lang
   }
 
-  // Priority: 1) URL path, 2) localStorage (user's explicit choice), 3) browser language
-  let currentLang =
-    detectUrlLanguage() ||
-    localStorage.getItem('lang') ||
-    detectBrowserLanguage()
+  function detectBrowserLanguage() {
+    const browserLang = navigator.language || navigator.userLanguage
+    return browserLang && browserLang.toLowerCase().startsWith('bg') ? 'bg' : 'en'
+  }
 
-  // Get nested translation value
+  let currentLang =
+    detectUrlLanguage() || localStorage.getItem('lang') || detectBrowserLanguage()
+
   function getTranslation(key) {
     const keys = key.split('.')
     let value = translations[currentLang]
@@ -321,66 +350,41 @@
         return null
       }
     }
-    return value
+    return typeof value === 'string' ? value : null
   }
 
-  // Apply translations to the page
   function applyTranslations() {
-    // Update text content
-    document.querySelectorAll('[data-i18n]').forEach(function (element) {
-      const key = element.getAttribute('data-i18n')
-      const translation = getTranslation(key)
-      if (translation) {
-        element.textContent = translation
-      }
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      const t = getTranslation(el.getAttribute('data-i18n'))
+      if (t) el.textContent = t
     })
 
-    // Update placeholders
-    document
-      .querySelectorAll('[data-i18n-placeholder]')
-      .forEach(function (element) {
-        const key = element.getAttribute('data-i18n-placeholder')
-        const translation = getTranslation(key)
-        if (translation) {
-          element.placeholder = translation
-        }
-      })
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+      const t = getTranslation(el.getAttribute('data-i18n-placeholder'))
+      if (t) el.placeholder = t
+    })
 
-    // Update HTML lang attribute
     document.documentElement.lang = currentLang
     document.documentElement.setAttribute('data-lang', currentLang)
 
-    // Update language switcher display
-    const langSwitcherCurrent = document.querySelector('.lang-switcher-current')
-    if (langSwitcherCurrent) {
-      langSwitcherCurrent.textContent = currentLang.toUpperCase()
-    }
+    const current = document.querySelector('.lang-switcher-current')
+    if (current) current.textContent = currentLang.toUpperCase()
   }
 
-  // Switch language
   function switchLanguage() {
     const previousLang = currentLang
     currentLang = currentLang === 'en' ? 'bg' : 'en'
     localStorage.setItem('lang', currentLang)
     applyTranslations()
-    // Track language switch
-    trackEvent('Language Switch', {
-      from: previousLang,
-      to: currentLang,
-    })
+    trackEvent('Language Switch', { from: previousLang, to: currentLang })
   }
 
-  // Initialize language switcher
   function initLanguageSwitcher() {
     const langSwitcher = document.querySelector('.lang-switcher')
-    if (langSwitcher) {
-      langSwitcher.addEventListener('click', switchLanguage)
-    }
-    // Apply initial translations
+    if (langSwitcher) langSwitcher.addEventListener('click', switchLanguage)
     applyTranslations()
   }
 
-  // Get validation message based on current language
   function getValidationMessage(key) {
     return getTranslation('contact.validation.' + key) || key
   }
@@ -389,24 +393,46 @@
        DOM ELEMENTS
        ============================================ */
   const nav = document.querySelector('.nav')
-  const navToggle = document.querySelector('.nav-mobile-toggle')
+  const navToggle = document.querySelector('.nav-toggle')
   const navLinks = document.querySelector('.nav-links')
   const navLinkItems = document.querySelectorAll('.nav-link')
   const contactForm = document.getElementById('contact-form')
-  const fadeElements = document.querySelectorAll('.fade-in')
+  const riseElements = document.querySelectorAll('.rise')
 
   /* ============================================
-       NAVIGATION - Scroll Effect
+       HERO VIDEO — keep it looping
        ============================================ */
-  function handleNavScroll() {
-    if (window.scrollY > 50) {
-      nav.classList.add('scrolled')
-    } else {
-      nav.classList.remove('scrolled')
+  const heroVideo = document.querySelector('.hero-media video')
+  if (heroVideo) {
+    heroVideo.loop = true
+    heroVideo.muted = true
+
+    const play = function () {
+      const attempt = heroVideo.play()
+      if (attempt && typeof attempt.catch === 'function') attempt.catch(function () {})
     }
+
+    // Safari occasionally ignores the loop attribute after a tab switch.
+    heroVideo.addEventListener('ended', function () {
+      heroVideo.currentTime = 0
+      play()
+    })
+
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) play()
+    })
+
+    play()
   }
 
-  // Throttle scroll events for performance
+  /* ============================================
+       NAVIGATION — scroll state
+       ============================================ */
+  function handleNavScroll() {
+    if (!nav) return
+    nav.classList.toggle('scrolled', window.scrollY > 50)
+  }
+
   let scrollTimeout
   window.addEventListener('scroll', function () {
     if (!scrollTimeout) {
@@ -416,137 +442,138 @@
       }, 10)
     }
   })
+  handleNavScroll()
 
   /* ============================================
-       NAVIGATION - Mobile Menu Toggle
+       NAVIGATION — mobile menu
        ============================================ */
+  function closeMenu() {
+    if (!navLinks || !navToggle) return
+    navLinks.classList.remove('open')
+    navToggle.classList.remove('active')
+    navToggle.setAttribute('aria-expanded', 'false')
+    document.body.style.overflow = ''
+  }
+
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', function () {
       const isOpen = navLinks.classList.contains('open')
-
       navLinks.classList.toggle('open')
       navToggle.classList.toggle('active')
-      navToggle.setAttribute('aria-expanded', !isOpen)
-
-      // Prevent body scroll when menu is open
+      navToggle.setAttribute('aria-expanded', String(!isOpen))
       document.body.style.overflow = isOpen ? '' : 'hidden'
-
-      // Track mobile menu toggle
-      trackEvent('Mobile Menu', {
-        action: isOpen ? 'close' : 'open',
-      })
+      trackEvent('Mobile Menu', { action: isOpen ? 'close' : 'open' })
     })
 
-    // Close mobile menu when clicking a link
     navLinkItems.forEach(function (link) {
       link.addEventListener('click', function () {
-        const linkText = this.textContent.trim()
-        const linkHref = this.getAttribute('href')
-
-        navLinks.classList.remove('open')
-        navToggle.classList.remove('active')
-        navToggle.setAttribute('aria-expanded', 'false')
-        document.body.style.overflow = ''
-
-        // Track navigation link click
         trackEvent('Navigation Click', {
-          link: linkText,
-          href: linkHref,
+          link: this.textContent.trim(),
+          href: this.getAttribute('href'),
           location: 'mobile-menu',
         })
+        closeMenu()
       })
     })
 
-    // Close mobile menu when clicking outside
     document.addEventListener('click', function (e) {
-      if (!nav.contains(e.target) && navLinks.classList.contains('open')) {
-        navLinks.classList.remove('open')
-        navToggle.classList.remove('active')
-        navToggle.setAttribute('aria-expanded', 'false')
-        document.body.style.overflow = ''
-      }
+      if (!nav.contains(e.target) && navLinks.classList.contains('open')) closeMenu()
     })
   }
 
-  /* ============================================
-       SMOOTH SCROLL - Anchor Links
-       ============================================ */
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href')
-
-      // Skip if it's just "#"
-      if (targetId === '#') return
-
-      const target = document.querySelector(targetId)
-
-      if (target) {
-        e.preventDefault()
-
-        const navHeight = nav ? nav.offsetHeight : 0
-        const targetPosition =
-          target.getBoundingClientRect().top + window.pageYOffset - navHeight
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth',
-        })
-
-        // Track anchor link click (navigation and CTAs)
-        const linkText = this.textContent.trim()
-        const isCTA =
-          this.classList.contains('btn-primary') ||
-          this.classList.contains('btn-secondary')
-        const isScrollIndicator = this.classList.contains(
-          'hero-scroll-indicator',
-        )
-        const location = isCTA
-          ? 'cta'
-          : isScrollIndicator
-            ? 'scroll-indicator'
-            : 'navigation'
-
-        trackEvent('Anchor Click', {
-          target: targetId,
-          link: linkText,
-          location: location,
-        })
-      }
-    })
-  })
-
-  /* ============================================
-       SCROLL REVEAL - Fade In Animation
-       ============================================ */
-  function revealOnScroll() {
-    const windowHeight = window.innerHeight
-    const revealPoint = 100 // Pixels from bottom of viewport
-
-    fadeElements.forEach(function (element) {
-      const elementTop = element.getBoundingClientRect().top
-
-      if (elementTop < windowHeight - revealPoint) {
-        element.classList.add('visible')
-      }
-    })
-  }
-
-  // Initial check on page load
-  revealOnScroll()
-
-  // Check on scroll (throttled)
-  let revealTimeout
-  window.addEventListener('scroll', function () {
-    if (!revealTimeout) {
-      revealTimeout = setTimeout(function () {
-        revealOnScroll()
-        revealTimeout = null
-      }, 50)
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && navLinks && navLinks.classList.contains('open')) {
+      closeMenu()
+      navToggle.focus()
     }
   })
 
   /* ============================================
-       CONTACT FORM - Validation & Submission
+       SMOOTH SCROLL — anchor links
+       ============================================ */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href')
+      if (targetId === '#') return
+
+      const target = document.querySelector(targetId)
+      if (!target) return
+
+      e.preventDefault()
+
+      const navHeight = nav ? nav.offsetHeight : 0
+      const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight
+      window.scrollTo({ top: top, behavior: 'smooth' })
+
+      const isCTA = this.classList.contains('btn')
+      trackEvent('Anchor Click', {
+        target: targetId,
+        link: this.textContent.trim(),
+        location: isCTA ? 'cta' : 'navigation',
+      })
+    })
+  })
+
+  /* ============================================
+       SERVICES ACCORDION
+       ============================================ */
+  const svcRows = document.querySelectorAll('.svc-row')
+
+  function closeRow(row) {
+    row.setAttribute('aria-expanded', 'false')
+    const body = document.getElementById(row.getAttribute('aria-controls'))
+    if (body) body.classList.remove('open')
+  }
+
+  svcRows.forEach(function (row) {
+    const body = document.getElementById(row.getAttribute('aria-controls'))
+
+    row.addEventListener('click', function () {
+      const isOpen = row.getAttribute('aria-expanded') === 'true'
+
+      // Single-open accordion
+      svcRows.forEach(function (other) {
+        if (other !== row) closeRow(other)
+      })
+
+      row.setAttribute('aria-expanded', String(!isOpen))
+      if (body) body.classList.toggle('open', !isOpen)
+
+      if (!isOpen) {
+        const title = row.querySelector('.svc-title')
+        trackEvent('Service Expand', { service: title ? title.textContent.trim() : '' })
+      }
+    })
+  })
+
+  /* ============================================
+       SCROLL REVEAL
+       ============================================ */
+  if (riseElements.length) {
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in')
+              observer.unobserve(entry.target)
+            }
+          })
+        },
+        { threshold: 0.15 },
+      )
+      riseElements.forEach(function (el) {
+        observer.observe(el)
+      })
+    } else {
+      riseElements.forEach(function (el) {
+        el.classList.add('in')
+      })
+    }
+  }
+
+  /* ============================================
+       CONTACT FORM — validation & submission
        ============================================ */
   if (contactForm) {
     const formFields = {
@@ -558,170 +585,115 @@
 
     const formSuccess = document.querySelector('.form-success')
 
-    // Validation rules (using translations)
     const validators = {
       name: function (value) {
-        if (!value.trim()) {
-          return getValidationMessage('nameRequired')
-        }
-        if (value.trim().length < 2) {
-          return getValidationMessage('nameMinLength')
-        }
+        if (!value.trim()) return getValidationMessage('nameRequired')
+        if (value.trim().length < 2) return getValidationMessage('nameMinLength')
         return ''
       },
-      company: function (value) {
-        // Company is optional, no validation needed
+      company: function () {
         return ''
       },
       email: function (value) {
-        if (!value.trim()) {
-          return getValidationMessage('emailRequired')
-        }
-        // Simple email regex
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        if (!emailRegex.test(value)) {
+        if (!value.trim()) return getValidationMessage('emailRequired')
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
           return getValidationMessage('emailInvalid')
         }
         return ''
       },
       message: function (value) {
-        if (!value.trim()) {
-          return getValidationMessage('messageRequired')
-        }
-        if (value.trim().length < 10) {
-          return getValidationMessage('messageMinLength')
-        }
+        if (!value.trim()) return getValidationMessage('messageRequired')
+        if (value.trim().length < 10) return getValidationMessage('messageMinLength')
         return ''
       },
     }
 
-    // Show error for a field
     function showError(field, message) {
-      const formGroup = field.closest('.form-group')
-      const errorElement = formGroup.querySelector('.form-error')
-
-      formGroup.classList.add('has-error')
-      field.classList.add('error')
-      if (errorElement) {
-        errorElement.textContent = message
-      }
+      const group = field.closest('.field')
+      const errEl = group.querySelector('.err')
+      group.classList.add('has-error')
+      field.classList.add('invalid')
+      if (errEl) errEl.textContent = message
     }
 
-    // Clear error for a field
     function clearError(field) {
-      const formGroup = field.closest('.form-group')
-      const errorElement = formGroup.querySelector('.form-error')
-
-      formGroup.classList.remove('has-error')
-      field.classList.remove('error')
-      if (errorElement) {
-        errorElement.textContent = ''
-      }
+      const group = field.closest('.field')
+      const errEl = group.querySelector('.err')
+      group.classList.remove('has-error')
+      field.classList.remove('invalid')
+      if (errEl) errEl.textContent = ''
     }
 
-    // Validate a single field
-    function validateField(fieldName, value) {
-      const validator = validators[fieldName]
-      if (validator) {
-        return validator(value)
-      }
-      return ''
+    function validateField(name, value) {
+      const validator = validators[name]
+      return validator ? validator(value) : ''
     }
 
-    // Validate all fields
     function validateForm() {
       let isValid = true
-
-      Object.keys(formFields).forEach(function (fieldName) {
-        const field = formFields[fieldName]
-        if (field) {
-          const error = validateField(fieldName, field.value)
-          if (error) {
-            showError(field, error)
-            isValid = false
-          } else {
-            clearError(field)
-          }
+      Object.keys(formFields).forEach(function (name) {
+        const field = formFields[name]
+        if (!field) return
+        const error = validateField(name, field.value)
+        if (error) {
+          showError(field, error)
+          isValid = false
+        } else {
+          clearError(field)
         }
       })
-
       return isValid
     }
 
-    // Real-time validation on blur
-    Object.keys(formFields).forEach(function (fieldName) {
-      const field = formFields[fieldName]
-      if (field) {
-        field.addEventListener('blur', function () {
-          const error = validateField(fieldName, field.value)
-          if (error) {
-            showError(field, error)
-          } else {
-            clearError(field)
-          }
-        })
+    Object.keys(formFields).forEach(function (name) {
+      const field = formFields[name]
+      if (!field) return
 
-        // Clear error on input
-        field.addEventListener('input', function () {
-          if (field.classList.contains('error')) {
-            clearError(field)
-          }
-        })
-      }
+      field.addEventListener('blur', function () {
+        const error = validateField(name, field.value)
+        if (error) {
+          showError(field, error)
+        } else {
+          clearError(field)
+        }
+      })
+
+      field.addEventListener('input', function () {
+        if (field.classList.contains('invalid')) clearError(field)
+      })
     })
 
-    // Form submission
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault()
 
-      // Validate all fields
       if (!validateForm()) {
-        // Track form validation error
-        const errorFields = contactForm.querySelectorAll(
-          '.form-input.error, .form-textarea.error',
-        )
-        const errorFieldNames = Array.from(errorFields).map(function (field) {
-          return field.id || field.name
-        })
+        const errorFields = contactForm.querySelectorAll('.invalid')
         trackEvent('Contact Form Validation Error', {
-          fields: errorFieldNames.join(','),
+          fields: Array.from(errorFields)
+            .map(function (f) {
+              return f.id || f.name
+            })
+            .join(','),
           count: errorFields.length,
         })
-
-        // Focus first error field
-        const firstError = contactForm.querySelector(
-          '.form-input.error, .form-textarea.error',
-        )
-        if (firstError) {
-          firstError.focus()
-        }
+        if (errorFields[0]) errorFields[0].focus()
         return
       }
 
-      // Collect form data
-      const formData = {
+      handleFormSubmission({
         name: formFields.name.value.trim(),
         company: formFields.company.value.trim(),
         email: formFields.email.value.trim(),
         message: formFields.message.value.trim(),
-        timestamp: new Date().toISOString(),
-      }
-
-      // Placeholder submission function
-      // In production, this would send data to a backend or service like Formspree
-      handleFormSubmission(formData)
+      })
     })
 
-    // Form submission handler - sends to mailserver
     async function handleFormSubmission(data) {
       const submitButton = contactForm.querySelector('.form-submit')
-      const originalButtonText = submitButton.innerHTML
-      const sendingText = getTranslation('contact.form.sending') || 'Sending...'
-
-      submitButton.innerHTML = '<span>' + sendingText + '</span>'
+      const originalText = submitButton.textContent
+      submitButton.textContent = getTranslation('contact.form.sending') || 'Sending…'
       submitButton.disabled = true
 
-      // Prepare the payload for the mailform API
       const payload = {
         timestamp: new Date().toISOString(),
         from: data.email,
@@ -733,94 +705,47 @@
       try {
         const response = await fetch('https://mailserver.radi.pro/submit', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         })
 
-        if (!response.ok) {
-          throw new Error('Failed to send message')
-        }
+        if (!response.ok) throw new Error('Failed to send message')
 
-        // Hide the form
         contactForm.style.display = 'none'
+        if (formSuccess) formSuccess.classList.add('visible')
 
-        // Show success message
-        if (formSuccess) {
-          formSuccess.classList.add('visible')
-        }
-
-        // Track successful form submission
-        trackEvent('Contact Form Submit', {
-          success: true,
-          hasCompany: !!data.company,
-        })
-
-        // Reset form fields
+        trackEvent('Contact Form Submit', { success: true, hasCompany: !!data.company })
         contactForm.reset()
       } catch (error) {
         console.error('Form submission error:', error)
-        // Track form submission error
-        trackEvent('Contact Form Submit', {
-          success: false,
-          error: 'submission_failed',
-        })
-        // Show error to user
-        alert(
-          currentLang === 'bg'
-            ? 'Възникна грешка при изпращането. Моля, опитайте отново.'
-            : 'An error occurred while sending. Please try again.',
-        )
+        trackEvent('Contact Form Submit', { success: false, error: 'submission_failed' })
+        alert(getTranslation('contact.error') || 'An error occurred while sending. Please try again.')
       } finally {
-        // Reset button state
-        submitButton.innerHTML = originalButtonText
+        submitButton.textContent = originalText
         submitButton.disabled = false
       }
-    }
-
-    // Helper function to escape HTML entities
-    function escapeHtml(text) {
-      const div = document.createElement('div')
-      div.textContent = text
-      return div.innerHTML
     }
   }
 
   /* ============================================
-       ANALYTICS - Event Tracking
+       SECTION VIEW TRACKING
        ============================================ */
-  // Helper function to track events with Plausible Analytics
-  function trackEvent(eventName, props) {
-    if (typeof window.plausible === 'function') {
-      window.plausible(eventName, { props: props || {} })
-    }
-  }
-
-  // Track section views when they come into viewport
   function initSectionViewTracking() {
     const sections = document.querySelectorAll('section[id]')
-    const viewedSections = new Set()
+    if (!sections.length || !('IntersectionObserver' in window)) return
 
-    if (sections.length === 0) return
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.3, // Track when 30% of section is visible
-    }
-
-    const observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting && !viewedSections.has(entry.target.id)) {
-          viewedSections.add(entry.target.id)
-          const sectionName = entry.target.id || 'unknown'
-          trackEvent('Section View', {
-            section: sectionName,
-          })
-        }
-      })
-    }, observerOptions)
+    const viewed = new Set()
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !viewed.has(entry.target.id)) {
+            viewed.add(entry.target.id)
+            trackEvent('Section View', { section: entry.target.id })
+          }
+        })
+      },
+      { threshold: 0.3 },
+    )
 
     sections.forEach(function (section) {
       observer.observe(section)
@@ -828,39 +753,19 @@
   }
 
   /* ============================================
-       FOOTER - Dynamic Year
+       FOOTER — dynamic year
        ============================================ */
   const yearSpan = document.getElementById('current-year')
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear()
-  }
+  if (yearSpan) yearSpan.textContent = new Date().getFullYear()
 
   /* ============================================
-       INITIALIZE LANGUAGE SYSTEM
+       INIT
        ============================================ */
   initLanguageSwitcher()
 
-  /* ============================================
-       INITIALIZE ANALYTICS TRACKING
-       ============================================ */
-  // Initialize section view tracking when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initSectionViewTracking)
   } else {
     initSectionViewTracking()
   }
-
-  /* ============================================
-       KEYBOARD ACCESSIBILITY
-       ============================================ */
-  // Handle Escape key to close mobile menu
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && navLinks && navLinks.classList.contains('open')) {
-      navLinks.classList.remove('open')
-      navToggle.classList.remove('active')
-      navToggle.setAttribute('aria-expanded', 'false')
-      document.body.style.overflow = ''
-      navToggle.focus()
-    }
-  })
 })()
