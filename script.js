@@ -15,6 +15,7 @@
       nav: {
         services: 'Services',
         approach: 'Approach',
+        work: 'Work',
         contact: 'Contact',
         ai: 'AI Services',
       },
@@ -167,6 +168,7 @@
       nav: {
         services: 'Услуги',
         approach: 'Подход',
+        work: 'Портфолио',
         contact: 'Контакт',
         ai: 'AI услуги',
       },
